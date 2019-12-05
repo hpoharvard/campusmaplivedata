@@ -19,8 +19,10 @@ from fuzzywuzzy import process
 from arcgis.gis import GIS
 from arcgis import features
 import smtplib
-
-gis = GIS("https://devsmap.cadm.harvard.edu/portal", os.getenv("user_devportal"), os.getenv("passwd_devportal"), verify_cert=False)
+"""
+NOTE: All the five dots ..... required the correct informations
+"""
+gis = GIS(".....", os.getenv("user_devportal"), os.getenv("passwd_devportal"), verify_cert=False)
 date_format = "%Y-%m-%dT%H:%M:%S"
 # hosted feature service id
 fc_id = '519cccf6a4704e4bb97e2bc7a485b17e'
@@ -146,7 +148,7 @@ def sendemail(msg):
     mailServer.ehlo()
     mailServer.starttls()
     #mailServer.login("giovanni_zambotti@harvard.edu", os.getenv("passwd_email"))
-    mailServer.login("hpomap@gmail.com", "##########") # input passwd before to run the script
+    mailServer.login("hpomap@gmail.com", ".....") # input passwd before to run the script
     #body = """Dear Student, \n Please send your report. \n Thank you for your attention"""
     #recipients = ['giovanni_zambotti@harvard.edu', 'gzambotti@gmail.com', 'parvaneh_kossari@harvard.edu', 'james_nelson@harvard.edu']
     recipients = ['giovanni_zambotti@harvard.edu', 'gzambotti@gmail.com']
@@ -160,7 +162,7 @@ def sendemail(msg):
 
 def parseaddresses():
     # read the second csv set
-    addr_table_path = r"C:\gis\p2017\feedparser\phueventfeed\master.csv"
+    addr_table_path = r".....\master.csv"
     addr_table = pd.read_table(addr_table_path,delimiter=",")    
     return addr_table        
 
